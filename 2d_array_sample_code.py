@@ -11,26 +11,26 @@ tests = ["c", "b", "a"]
 tests.sort()
 print(tests)
 
-# Length of a list
-print(len(scores))
+# # Length of a list
+# print(len(scores))
 
-# Iterating through elements of a list
-for score in scores:
-    print(score)
+# # Iterating through elements of a list
+# for score in scores:
+#     print(score)
 
-# Nested iteration
-for score in scores:
-    for element in score:
-        print(element)
+# # Nested iteration
+# for score in scores:
+#     for element in score:
+#         print(element)
 
-# Index-based iteration
-for i in range(len(scores)):
-    print(scores[i])
+# # Index-based iteration
+# for i in range(len(scores)):
+#     print(scores[i])
 
-# Nested index-based iteration
-for i in range(len(scores)):
-    for j in range(len(scores[i])):
-        print(scores[i][j])
+# # Nested index-based iteration
+# for i in range(len(scores)):
+#     for j in range(len(scores[i])):
+#         print(scores[i][j])
 
 # Finding the maximum value
 max_value = 0
@@ -38,19 +38,34 @@ for score in scores:
     for value in score:
         if value > max_value:
             max_value = value
-print(max_value)
+#print(max_value)
 
 # Function to calculate the maximum value
 def calculate_max_value(data):
     max_value = 0
+    
+    total_temp = 0
+    avg_temp = 0
+    total_elements = 0
+    min_value = data[0][0]
     for row in data:
         for value in row:
+            total_elements += 1
+            total_temp += value
+            avg_temp = round(total_temp / total_elements,2)
             if value > max_value:
                 max_value = value
-    return max_value
+            if value < min_value:
+                min_value = value
+
+    return  avg_temp
 
 print(calculate_max_value(scores))
 
+# Modify the maximum finding code to also find the minimum temperature
+# Calculate and display the average temperature across all weeks
+# Add code to find which week had the highest average temperature
+# Add a new week of temperatures to the array
 
 # Multidimensional list operations (comments translated)
 
